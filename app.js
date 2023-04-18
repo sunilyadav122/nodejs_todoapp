@@ -19,6 +19,9 @@ app.use(function(req, res, next) {
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors());
+app.get("/api/v1",(req,res) => {
+  res.send("Success Get!")
+})
 app.use("/api/v1", userRouter);
 app.use("/api/v1", taskRouter);
 app.use(errorMiddleware);
